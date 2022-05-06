@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".eventtest.EventActivity"
+    android:layout_gravity="center_horizontal"
+    >
+
+    <com.fx.note.eventtest.ParentViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/purple_700"
+        android:layout_margin="20dp"
+        android:id="@+id/parentviewgroup">
+
+
+
+        <com.fx.note.eventtest.ChildViewGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="50dp"
+            android:background="@color/purple_500">
+
+          <com.fx.note.eventtest.ChildView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="50dp"
+              android:background="@color/purple_200"
+              android:id="@+id/childview">
+
+          </com.fx.note.eventtest.ChildView>
+
+        </com.fx.note.eventtest.ChildViewGroup>
+
+
+
+    </com.fx.note.eventtest.ParentViewGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="查看详解"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png"
+        android:layout_marginBottom="50dp">
+
+    </Button>
+
+</LinearLayout>

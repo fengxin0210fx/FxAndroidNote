@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fx.note">
+
+    <application
+        android:name=".appliction.MyApp"
+        android:allowBackup="true"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".okhttp.OkHttpActivity" />
+        <activity android:name=".java.JavaActivity" />
+        <activity android:name="io.noties.markwon.app.readme.ReadMeActivity" />
+        <activity android:name=".airthmtic.tree.TwoTreeActivity" />
+        <activity android:name=".fourcomponents.FourCpActivity" />
+        <activity android:name=".thread.ThreadActivity" />
+        <activity android:name=".appliction.ApplictionActivity" />
+        <activity android:name=".handler.HandlerActivity" />
+        <activity android:name=".viewdraw.ViewDrawActivity" />
+        <activity android:name=".PngShowActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".eventtest.EventActivity" />
+        <activity android:name=".airthmtic.ArithmeticActivity" />
+
+        <provider
+            android:name=".appliction.MyContentProvider"
+            android:authorities="com.fx.note.appliction.MyContentProvider"
+            android:exported="false" />
+
+        <service
+            android:name=".appliction.TestService"
+            android:process=":TestService" />
+    </application>
+
+</manifest>

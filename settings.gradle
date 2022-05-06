@@ -1,0 +1,5 @@
+include ':app'
+include ':utilslibrary'
+include ':markwon'
+
+rootProject.name = "MyAndroidNote"

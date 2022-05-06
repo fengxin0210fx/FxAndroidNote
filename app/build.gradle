@@ -1,0 +1,233 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'AndResGuard'
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.21'
+    }
+}
+// 混淆资源文件
+andResGuard {
+    // mappingFile = file("./resource_mapping.txt")
+//     mappingFile = file("./resource_mapping.txt")
+//    mappingFile = null
+    use7zip = true
+    useSign = true
+    // 打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
+    keepRoot = false
+    // 设置这个值，会把arsc name列混淆成相同的名字，减少string常量池的大小
+    fixedResName = "arg"
+    // 打开这个开关会合并所有哈希值相同的资源，但请不要过度依赖这个功能去除去冗余资源
+    mergeDuplicatedRes = true
+    whiteList = [
+            // your icon
+            "R.drawable.icon",
+            // for fabric
+            "R.string.com.crashlytics.*",
+            // for umeng update
+            "R.string.umeng*",
+            "R.string.UM*",
+            "R.string.tb_*",
+            "R.string.rc_*",
+            "R.layout.umeng*",
+            "R.layout.tb_*",
+            "R.layout.rc_*",
+            "R.drawable.umeng*",
+            "R.drawable.tb_*",
+            "R.drawable.rc_*",
+            "R.drawable.u1*",
+            "R.drawable.u2*",
+            "R.anim.umeng*",
+            "R.color.umeng*",
+            "R.color.tb_*",
+            "R.color.rc_*",
+            "R.style.*UM*",
+            "R.style.umeng*",
+            "R.style.rc_*",
+            "R.id.umeng*",
+            "R.id.rc_*",
+            // umeng share for sina
+            "R.drawable.sina*",
+            // for google-services.json
+            "R.string.google_app_id",
+            "R.string.gcm_defaultSenderId",
+            "R.string.default_web_client_id",
+            "R.string.ga_trackingId",
+            "R.string.firebase_database_url",
+            "R.string.google_api_key",
+            "R.string.google_crash_reporting_api_key",
+            "R.dimen.rc_*",
+            "R.xml.file_paths",
+            "R.drawable.utils_toast_bg",
+            "R.layout.utils_toast_view",
+
+            "R.layout.Lm",
+            "R.res.Lm",
+            "R.xml.Lm",
+            "R.drawable.util_*",
+            "R.layout.util_*",
+            "R.xml.util_*",
+
+//            "R.drawable.default_scroll_handle_*",
+//            "R.style.sb_*",
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.gif",
+            "resources.arsc"
+    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.2.21'
+        //path = "/usr/local/bin/7za"
+    }
+
+    /**
+     * 可选： 如果不设置则会默认覆盖assemble输出的apk
+     **/
+//     finalApkBackupPath = "${project.rootDir}/final.apk"
+
+    /**
+     * 可选: 指定v1签名时生成jar文件的摘要算法
+     * 默认值为“SHA-1”
+     **/
+    // digestalg = "SHA-256"
+}
+
+
+android {
+    compileSdkVersion build_versions.com_sdk
+    buildToolsVersion build_versions.build_tools
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    defaultConfig {
+        applicationId "com.fx.note"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode app_version.versionCode
+        versionName app_version.versionName
+        multiDexEnabled true
+        consumerProguardFiles 'consumer-rules.pro'
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+    //签名配置
+    signingConfigs {
+        debugConfig {
+            keyAlias "awa"
+            keyPassword "123123"
+            storeFile file("../key")
+            storePassword "123123"
+        }
+        releaseConfig {
+            keyAlias "awa"
+            keyPassword "123123"
+            storeFile file("../key")
+            storePassword "123123"
+//            证书指纹:
+//            MD5:  1B:0C:FC:E9:47:E3:70:D7:9B:85:60:19:58:80:BF:D7
+//            SHA1: 69:AF:80:1D:C4:3B:3C:D3:9D:EB:23:A2:1C:06:D2:F3:55:9B:BD:F4
+//            SHA256: 90:BC:66:43:0D:6A:F9:FE:63:36:16:F4:A1:23:C6:EC:0B:2A:0C:5E:77:1F:66:3F:B8:8A:95:19:19:00:13:5
+        }
+    }
+    buildTypes {
+        debug {
+            //在这里添加：
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            minifyEnabled false  //混淆
+            zipAlignEnabled false//内存对齐
+            shrinkResources false // 移除无用的resource文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debugConfig
+            buildConfigField("String", "BUILD_TIME", getBuildTime())
+        }
+        release {
+            //在这里添加：
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            minifyEnabled true  //混淆
+            zipAlignEnabled true//内存对齐
+            shrinkResources true // 移除无用的resource文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+            buildConfigField("String", "BUILD_TIME", getBuildTime())
+        }
+
+        //配置自定义打包名称
+        applicationVariants.all { variant ->
+            variant.outputs.all {
+                def fileName
+                def date = new Date()
+                def formattedDate = date.format('MMddHHmm')
+
+                if (variant.buildType.name.equals('release')) {
+                    fileName = "FxNote_V${variant.mergedFlavor.versionName}_${formattedDate}_r.apk"
+                } else if (variant.buildType.name.equals('debug')) {
+                    fileName = "FxNote_V${variant.mergedFlavor.versionName}_${formattedDate}_d.apk"
+                }
+                outputFileName = fileName
+
+            }
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+}
+
+static String getBuildTime() {
+    Date date = new Date();
+    String str = "\"" + date.format('yyyy-MM-dd HH:mm:ss') + "\""
+    return str;
+
+}
+gradle.taskGraph.whenReady {
+    it.allTasks.each { task ->
+        println("Task Name : ${task.name}")
+        task.dependsOn.each{ t->
+            println "-----${t.class}"
+        }
+        //def outputFileStr = task.outputs.files.getAsPath();
+        //def inputFileStr = task.inputs.files.getAsPath()
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(path: ':utilslibrary')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    testImplementation "com.android.tools.build:gradle:4.0.0"
+    api project(path: ':markwon')
+//    implementation "io.noties.markwon:image-glide:4.6.2"
+//    implementation "io.noties.markwon:markwon-html:4.6.2"
+
+
+}

@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+apply plugin: "kotlin-android-extensions"
+apply plugin: 'kotlin-android'
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        applicationVariants {
+        }
+    }
+    configurations {
+        //排除 prism4j 里的
+        compile.exclude group: 'org.jetbrains' , module:'annotations-java5'
+    }
+
+}
+dependencies {
+    api "io.noties.markwon:core:4.6.2"
+    api "io.noties.markwon:image:4.6.2"
+    api "io.noties.markwon:html:4.6.2"
+    api "io.noties.markwon:recycler:4.6.2"
+    api "io.noties:debug:5.1.0"
+    api "io.noties:adapt:2.2.0"
+    api "io.noties:prism4j:2.0.0"
+    api "com.squareup.okhttp3:okhttp:4.8.1"
+    api "com.atlassian.commonmark:commonmark-ext-gfm-tables:0.13.0"
+    api "com.atlassian.commonmark:commonmark:0.13.0"
+    api "com.atlassian.commonmark:commonmark-ext-gfm-strikethrough:0.13.0"
+
+
+    api project(':utilslibrary')
+}
+

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn0"
+            android:textSize="15dp"
+            android:text="算法研究"
+            android:layout_margin="5dp"
+            android:textAllCaps="false">
+        </Button>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn1"
+            android:textSize="15dp"
+            android:text="事件分发机制"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+            android:visibility="gone">
+        </Button>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn2"
+            android:textSize="15dp"
+            android:text="View的工作原理"
+            android:layout_margin="5dp"
+            android:textAllCaps="false">
+
+        </Button>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn3"
+            android:textSize="15dp"
+            android:text="四大组件工作工程"
+            android:layout_margin="5dp"
+            android:textAllCaps="false">
+
+        </Button>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn4"
+            android:textSize="15dp"
+            android:text="handler机制"
+            android:layout_margin="5dp"
+            android:textAllCaps="false">
+
+        </Button>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn5"
+            android:textSize="15dp"
+            android:text="Apk-Application"
+            android:layout_margin="5dp"
+            android:textAllCaps="false">
+
+        </Button>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn6"
+            android:textSize="15dp"
+            android:text="android 动画深入理解"
+            android:layout_margin="5dp"
+            android:textAllCaps="false">
+
+        </Button>
+
+
+
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn8"
+            android:textSize="15dp"
+            android:text="Thread"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+           >
+        </Button>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn9"
+            android:textSize="15dp"
+            android:text="adb"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+            >
+        </Button>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn10"
+            android:textSize="15dp"
+            android:text="java"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+            >
+        </Button>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:id="@+id/btn11"
+            android:textSize="15dp"
+            android:text="颜色属性"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+            >
+        </Button>
+
+    </LinearLayout>
+
+</ScrollView>

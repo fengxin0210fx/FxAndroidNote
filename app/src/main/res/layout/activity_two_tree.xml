@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".airthmtic.tree.TwoTreeActivity"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="二叉树基础"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_1"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="二叉树其他"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_2"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+
+</LinearLayout>

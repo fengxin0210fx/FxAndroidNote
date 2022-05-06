@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".java.JavaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/show_png_0"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="string,stringbuffer,stringBuilder"
+            android:textAllCaps="false"
+            android:textSize="15dp"></Button>
+        <Button
+            android:id="@+id/show_png_1"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="Java 注解"
+            android:textAllCaps="false"
+            android:textSize="15dp"></Button>
+        <Button
+            android:id="@+id/show_png_2"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="Java 反射1"
+            android:textAllCaps="false"
+            android:textSize="15dp"></Button>
+        <Button
+            android:id="@+id/show_png_3"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="Java 反射2"
+            android:textAllCaps="false"
+            android:textSize="15dp"></Button>
+        <Button
+            android:id="@+id/show_png_4"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="proxy"
+            android:textAllCaps="false"
+            android:textSize="15dp"></Button>
+        <Button
+            android:id="@+id/show_png_5"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="Jvm And ART"
+            android:textAllCaps="false"
+            android:textSize="15dp"></Button>
+
+        <Button
+            android:id="@+id/show_png_6"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="Java 对象初始化详细过程"
+            android:textAllCaps="false"
+            android:textSize="15dp"></Button>
+
+        <Button
+            android:id="@+id/show_png_7"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="Java 引用类型"
+            android:textAllCaps="false"
+            android:textSize="15dp"></Button>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

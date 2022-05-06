@@ -1,0 +1,27 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+ext.deps = [:]
+def versions = [:]
+versions.kotlin = "1.5.10"
+
+def build_versions = [:]
+build_versions.com_sdk = 30
+build_versions.min_sdk = 26
+build_versions.target_sdk = 31
+build_versions.build_tools = "30.0.3"
+ext.build_versions = build_versions
+
+def app_version = [:]
+app_version.versionCode = 1            //软件版本号
+app_version.versionName = "1.0.0"      //软件版本名字
+ext.app_version = app_version
+
+
+static def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+}
+
+ext.addRepos = this.&addRepos

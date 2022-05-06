@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".viewdraw.ViewDrawActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+
+    
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="setContentView过程"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_1"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="view绘制从ActivityThread的handlerReusme说起"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_2"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="Choreographer(编舞者)"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_3"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="view绘制从ViewRootImpl的performTraversal()说起"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_4"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="事件分发机制 "
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_5"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="invalidate to drow "
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_6"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="View post "
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_7"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+    </LinearLayout>
+</ScrollView>

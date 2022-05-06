@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".appliction.ApplictionActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="apk启动过程(application创建过程)"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_1"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="apk构建过程"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_2"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="apk安装过程"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_3"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false"
+        android:text="Binder机制"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/show_png_4"
+        android:layout_marginBottom="30dp">
+
+    </Button>
+
+
+
+</LinearLayout>
